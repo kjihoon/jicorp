@@ -74,10 +74,8 @@ public class HomeController {
 		*/
 		List<Map<String,Object>> result = new ArrayList<>();
 		result = testService.selectTestList();
-		for (int i =0;i<result.size();i++)
-		{
-			jo.put("id", result.get(0).get("id"));
-		}
+		jo.put("id", result.get(0).get("id"));
+		jo.put("name", result.get(0).get("name"));
 		return jo.toJSONString();
 	}
 	
