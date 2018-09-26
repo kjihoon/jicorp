@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="test">
+ 	<!-- Select -->
+	<select id="selectTestOne" parameterType="hashmap"
+		resultType="hashmap">        
+            select *from testtable where id = #{id}
+	</select>
+	<select id="selectTestList"	resultType="hashmap">        
+            select *from testtable     
+	</select>
+	<select id="selectTestList2" parameterType="hashmap"
+		resultType="hashmap">               
+            select *from testtable where name = #{name}     
+	</select>
+	
+	<!-- Insert  -->
+    <insert id="insertTest" parameterType="hashmap">
+    		insert into testtable values(#{id},#{name})
+    </insert>
+    
+    <!-- Delete  -->
+    <delete id="deleteTest" parameterType="hashmap">
+    		delete from testtable where id=#{id}
+    </delete>
+    
+    <!-- Update  -->
+    <update id="updateTest" parameterType="hashmap">
+    		update testtable
+			   set id = #{id}
+			 where id = #{old};
+    </update>
+</mapper>
