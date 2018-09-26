@@ -1,12 +1,14 @@
 package com.jh.app;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,6 +61,7 @@ public class HomeController {
 	public String body(@RequestParam(value="hi",defaultValue="hi") String body) throws Exception {
 		logger.info(body);
 		JSONObject  jo = new JSONObject();
+		JSONArray jr = new JSONArray();
 		Map<String,Object> param_map = new HashMap<>();
 		/*param_map.put("id", "kjijihi0914");
 		param_map.put("name", "jihoon12");
@@ -69,9 +72,12 @@ public class HomeController {
 		testService.deleteTest(param_map);
 		jo.put("body", result.toString());
 		*/
-		param_map.put("id", "kjijihi09142");
-		int a  = testService.deleteTest(param_map);
-		logger.info(a+"\ta result");
+		List<Map<String,Object>> result = new ArrayList<>();
+		result = testService.selectTestList();
+		for (int i =0;i<result.size();i++)
+		{
+			jo.put("id", result.get(0).get("id"));
+		}
 		return jo.toJSONString();
 	}
 	
