@@ -16,7 +16,7 @@ public class AbstractDao {
      
     protected void printQueryId(String queryId) {
         if(log.isDebugEnabled()){
-            log.debug("\t QueryId  \t:  " + queryId);
+            log.debug("QueryId  \t\t:  " + queryId);
         }
     }
      

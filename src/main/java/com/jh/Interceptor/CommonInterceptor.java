@@ -27,7 +27,7 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
 				Enumeration<String> list =request.getParameterNames();
 	            while (list.hasMoreElements()) {
 	            	String param = list.nextElement();
-	            	logger.info(" Params \t:  "+param+Arrays.toString(request.getParameterValues(param)));
+	            	logger.info(" Params\t:  "+param+Arrays.toString(request.getParameterValues(param)));
 	            }
 	            
 	        }

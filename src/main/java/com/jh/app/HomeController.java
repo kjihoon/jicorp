@@ -76,7 +76,12 @@ public class HomeController {
 		result = testService.selectTestList();
 		jo.put("id", result.get(0).get("id"));
 		jo.put("name", result.get(0).get("name"));
-		return jo.toJSONString();
+		JSONObject  jo2 = new JSONObject(result.get(0));
+		return jo2.toJSONString();
 	}
 	
+	@RequestMapping("/editor")
+	public String editor() {
+		return "edittest";
+	}
 }
