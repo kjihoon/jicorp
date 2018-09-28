@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -13,10 +13,12 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-heading">
               <h1>${content.TITLE }</h1>
-              <h2 class="subheading" style="font-family: 'Nanum Pen Script', cursive;">Problems look mighty small from 150 miles up</h2>
+              <h2 class="subheading" style="font-family: 'Nanum Pen Script', cursive;">
+				${content.TITLE_SUB }
+              </h2>
               <span class="meta">Posted by
                 <a href="#">${content.USER_ID }</a>
-                <!-- on August 24, 2018 -->${content.LOAD_DATE }</span>
+                <!-- on August 24, 2018 --><span class="load_date">${content.LOAD_DATE }</span></span>
             </div>
           </div>
         </div>

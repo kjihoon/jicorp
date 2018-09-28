@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 
 
@@ -11,7 +11,7 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
               <h1>JH's Blog</h1>
-              <span class="subheading" style="font-family: 'Nanum Pen Script', cursive;">Where there¡¯s a will, there¡¯s a way.</span>
+              <span class="subheading" style="font-family: 'Nanum Pen Script', cursive;">Where thereâ€™s a will, thereâ€™s a way.</span>
             </div>
           </div>
         </div>

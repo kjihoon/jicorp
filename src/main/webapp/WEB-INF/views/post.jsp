@@ -11,7 +11,7 @@
     <meta name="author" content="">
 
     <title>Clean Blog - Start Bootstrap Theme</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/tail/tail_css/tail.writer.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/tail/tail_css/tail.writer.css">
 	<script src="${pageContext.request.contextPath}/resources/tail/tail_js/marked.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/tail/tail_js/tail.writer.min.js"></script>
 	
@@ -155,39 +155,37 @@
 
     <!-- Custom scripts for this template -->
     <script src="${pageContext.request.contextPath}/resources/js/clean-blog.min.js"></script>
-<script>
-var option = {
-	    width:            "100%",
-	    height:           ["200px", "500px"],
-	    classes:          "",
-	    resize:           true,
-	    indentTab:        false,
-	    indentSize:       4,
-	    toolbar:          [
-	        "headers", "|", "bold", "italic", "strikethrough", "|", "quote", "code",
-	        "codeblock", "indent", "outdent", "|", "link", "image", "table", "hr", "|",
-	        "list:unordered", "list:ordered", "|", "preview"
-	    ],
-	    tooltip:          "top",
-	    statusbar:        true
-	};
-	document.addEventListener("DOMContentLoaded", function(){
-	    var options = option
-	    // Just use an CSS Selector...
-	    tail.writer(".my-tail-editor", options);
-	
-	});
-	
-	
-	$("#mdtestbt").click(function(){
-		var a= $("body > article > div > div > div > div.tail-writer-object.tail-writer-preview > div.tail-writer-preview").html();
-		//alert(a);
-		$("#mdtest").html(a);
+	<script>
+	var option = {
+		    width:            "100%",
+		    height:           ["200px", "500px"],
+		    classes:          "",
+		    resize:           true,
+		    indentTab:        false,
+		    indentSize:       4,
+		    toolbar:          [
+		        "headers", "|", "bold", "italic", "strikethrough", "|", "quote", "code",
+		        "codeblock", "indent", "outdent", "|", "link", "image", "table", "hr", "|",
+		        "list:unordered", "list:ordered", "|", "preview"
+		    ],
+		    tooltip:          "top",
+		    statusbar:        true
+		};
+		document.addEventListener("DOMContentLoaded", function(){
+		    var options = option
+		    // Just use an CSS Selector...
+		    tail.writer(".my-tail-editor", options);
 		
-	})
-	
-
-</script>
+		});
+		
+		// convert to md from priview text
+		$("#mdtestbt").click(function(){
+			var a= $("body > article > div > div > div > div.tail-writer-object.tail-writer-preview > div.tail-writer-preview").html();
+			//alert(a);
+			$("#mdtest").html(a);
+			
+		})
+	</script>
   </body>
 
 </html>

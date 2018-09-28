@@ -3,15 +3,17 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 
-CREATE TABLE ContentS
+CREATE TABLE CONTENTS
 (
-    `ContentS_IDX`  INT              NOT NULL    AUTO_INCREMENT COMMENT 'ContentS_IDX', 
+    `CONTENTS_IDX`  INT              NOT NULL    AUTO_INCREMENT COMMENT 'CONTENTS_IDX', 
     `USER_ID`       VARCHAR(15)      NOT NULL    COMMENT 'USER_ID', 
     `LOAD_DATE`     VARCHAR(14)      NULL        COMMENT 'LOAD_DATE', 
     `EDIT_DATE`     VARCHAR(14)      NULL        COMMENT 'EDIT_DATE', 
-    `TITLE`         VARCHAR(200)     NULL        COMMENT 'TITLE', 
-    `CONTENT`       VARCHAR(3000)    NULL        COMMENT 'CONTENT', 
-    PRIMARY KEY (ContentS_IDX)
+    `TITLE`         VARCHAR(200)     NULL        COMMENT 'TITLE',
+    `TITLE_SUB`		VARCHAR(200) 	 NULL		 COMMENT 'TITLE_SUB',
+    `CONTENT`       MEDIUMTEXT		 NULL        COMMENT 'CONTENT',
+    `CONTENT_MD`	MEDIUMTEXT		 NULL		 COMMENT 'CONTENT_MD',
+    PRIMARY KEY (CONTENTS_IDX)
 );
 -->
 
@@ -23,6 +25,7 @@ CREATE TABLE ContentS
 				LOAD_DATE,
 				EDIT_DATE,
 				TITLE,
+				TITLE_SUB,
 				CONTENT
 		  FROM  CONTENTS
 		 WHERE  CONTENTS_IDX = #{CONTENTS_IDX}
@@ -33,6 +36,7 @@ CREATE TABLE ContentS
 				LOAD_DATE,
 				EDIT_DATE,
 				TITLE,
+				TITLE_SUB,
 				CONTENT
 		  FROM  CONTENTS
 	</select>
@@ -43,6 +47,7 @@ CREATE TABLE ContentS
 				LOAD_DATE,
 				EDIT_DATE,
 				TITLE,
+				TITLE_SUB,
 				CONTENT
 		  FROM  CONTENTS
 		 WHERE	USER_ID = #{USER_ID}
@@ -51,14 +56,16 @@ CREATE TABLE ContentS
 	<!-- Insert  -->
     <insert id="insertContents" parameterType="hashmap">
 		INSERT INTO CONTENTS 
-		(USER_ID, LOAD_DATE, EDIT_DATE, TITLE, CONTENT) 
+		(USER_ID, LOAD_DATE, EDIT_DATE, TITLE, TITLE_SUB, CONTENT, CONTENT_MD) 
 		VALUES 
 		(
 		#{USER_ID},
 		DATE_FORMAT(NOW(),'%Y%m%d%H%i'),
 		DATE_FORMAT(NOW(),'%Y%m%d%H%i'),
 		#{TITLE},
-		#{CONTENT}
+		#{TITLE_SUB},
+		#{CONTENT},
+		#{CONTENT_MD}
 		)
     </insert>
     

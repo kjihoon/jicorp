@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!-- Footer -->
     <footer>
       <div class="container">
@@ -31,7 +31,8 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+            <p class="copyright text-muted">Copyright &copy;2018 곽지훈 All rights reserved.</p>
+            <p class="copyright text-muted"><a href="#">의견 보내기</a></p>
           </div>
         </div>
       </div>
