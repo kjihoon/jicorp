@@ -30,6 +30,6 @@ public class ContentsDao extends AbstractDao{
 		return (int) delete ("contents.deleteContents",params);	
 	}
 	public int updateContents(Map<String, Object> params) {
-		return (int) update("contents.deleteContents",params);
+		return (int) update("contents.updateContents",params);
 	}
 }

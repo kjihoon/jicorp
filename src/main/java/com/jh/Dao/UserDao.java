@@ -29,6 +29,6 @@ public class UserDao extends AbstractDao{
 		return (int) delete ("User.deleteUser",params);	
 	}
 	public int updateUser(Map<String, Object> params) {
-		return (int) update("User.deleteUser",params);
+		return (int) update("User.updateUser",params);
 	}
 }

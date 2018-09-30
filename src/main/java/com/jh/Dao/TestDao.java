@@ -35,7 +35,7 @@ public class TestDao extends AbstractDao{
 		
 	}
 	public int updateTest(Map<String, Object> params) {
-		return (int) update("test.deleteTest",params);
+		return (int) update("test.updateTest",params);
 	}
 	
  

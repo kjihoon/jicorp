@@ -15,5 +15,12 @@
           </div>
         </div>
       </div>
+      
     </article>
     <hr>
+    <div class="container">
+    <div class="clearfix">
+            <a name="mastercheck" class="btn btn-primary float-right" href="${pageContext.request.contextPath}/edit/contents?CONTENTS_IDX=${content.CONTENTS_IDX }">EDIT</a>
+      </div>
+    </div>
+      

@@ -77,7 +77,12 @@
 		$(".load_date").text(YYYY+"."+MM+"."+dd+"  "+hh+":"+mm);
 		
 	});
-	
+	 var mastercheck= "${master}";
+	 if (mastercheck!=""){
+	    	$("[name=mastercheck]").show();
+	 }else{
+	    	$("[name=mastercheck]").hide();
+	 }
 	
 	
 	</script>

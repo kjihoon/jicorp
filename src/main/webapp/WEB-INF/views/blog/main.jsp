@@ -29,17 +29,10 @@
 
           <!-- Pager -->
           <div class="clearfix">
-            <a id="mastercheck" class="btn btn-primary float-right" href="${pageContext.request.contextPath}/load/contents">POST;</a>
+            <a name="mastercheck" class="btn btn-primary float-right" href="${pageContext.request.contextPath}/load/contents">POST</a>
           </div>
         </div>
       </div>
     </div>
     <hr>
-    <script>
-    var mastercheck= "${master}";
-    if (mastercheck!=""){
-    	$("#mastercheck").show();
-    }else{
-    	$("#mastercheck").hide();
-    }
-    </script>
+   

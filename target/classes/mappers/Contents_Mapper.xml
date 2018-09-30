@@ -26,29 +26,33 @@ CREATE TABLE CONTENTS
 				EDIT_DATE,
 				TITLE,
 				TITLE_SUB,
-				CONTENT
+				CONTENT,
+				CONTENTS_IDX,
+				CONTENT_MD
 		  FROM  CONTENTS
 		 WHERE  CONTENTS_IDX = #{CONTENTS_IDX}
 	</select>
 	<select id="selectContentsList"	resultType="hashmap">        
-		SELECT 	CONTENTS_IDX,
-				USER_ID,
+		SELECT 	USER_ID,
 				LOAD_DATE,
 				EDIT_DATE,
 				TITLE,
 				TITLE_SUB,
-				CONTENT
+				CONTENT,
+				CONTENTS_IDX,
+				CONTENT_MD
 		  FROM  CONTENTS
 	</select>
 	<select id="selectContentsList2" parameterType="hashmap"
 		resultType="hashmap">               
-		SELECT 	CONTENTS_IDX,
-				USER_ID,
+		SELECT 	USER_ID,
 				LOAD_DATE,
 				EDIT_DATE,
 				TITLE,
 				TITLE_SUB,
-				CONTENT
+				CONTENT,
+				CONTENTS_IDX,
+				CONTENT_MD
 		  FROM  CONTENTS
 		 WHERE	USER_ID = #{USER_ID}
 	</select>
@@ -78,6 +82,12 @@ CREATE TABLE CONTENTS
     
     <!-- Update  -->
     <update id="updateContents" parameterType="hashmap">
-
+		UPDATE CONTENTS
+		   SET TITLE		= #{TITLE},
+		   	   TITLE_SUB	= #{TITLE_SUB},
+			   EDIT_DATE	= DATE_FORMAT(NOW(),'%Y%m%d%H%i'),
+			   CONTENT		= #{CONTENT},
+			   CONTENT_MD	= #{CONTENT_MD}
+		 WHERE CONTENTS_IDX	= #{CONTENTS_IDX}
     </update>
 </mapper>

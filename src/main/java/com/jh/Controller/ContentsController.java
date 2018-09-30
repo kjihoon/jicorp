@@ -31,17 +31,44 @@ public class ContentsController {
 		return "blog/index";
 	}
 	
+	@RequestMapping("/edit/contents")
+	public String editContents(CommandMap params,HttpServletRequest req) throws Exception {
+		Map<String,Object> content = contentService.selectContentsOne(params.getMap());
+		log.info("result test"+content.toString());
+		req.setAttribute("center", "edit");
+		req.setAttribute("content", content);
+		return "blog/index";
+	}
+	
+	
+	
+	
 	@RequestMapping(value="/create/contents" ,produces = "text/html; charset=utf8",method=RequestMethod.GET) // POST
 	public String createContents(CommandMap params,HttpServletRequest req,RedirectAttributes redirectAttributes){
 		try{
-			log.debug(params.getMap().toString());
 			contentService.insertContents(params.getMap());
 		}catch(Exception e) {
+			log.error(e.getMessage());
 			redirectAttributes.addAttribute("msg", "contents 생성에 실패하였습니다.");
 			return "redirect:/main/error";
 		}
 		return "redirect:/main/index";
 	}
+	@RequestMapping(value="/update/contents" ,produces = "text/html; charset=utf8",method=RequestMethod.GET) // POST
+	public String updateContents(CommandMap params,HttpServletRequest req,RedirectAttributes redirectAttributes){
+		try{
+			contentService.updateContents(params.getMap());
+		}catch(Exception e) {
+			log.error(e.getMessage());
+			redirectAttributes.addAttribute("msg", "contents 수정에 실패하였습니다.");
+			return "redirect:/main/error";
+		}
+		return "redirect:/main/index";
+	}
+	
+	
+	
+	
 	@RequestMapping("/selectlist/contents")
 	@ResponseBody
 	public String selectContentsList() throws Exception {
