@@ -24,11 +24,17 @@ public class ContentsServiceImpl implements ContentsService{
 		return ContentsDao.selectContentsOne(params);
 	}
 	@Override
+	public Map<String, Object> selectContentsLength(Map<String, Object> params) throws Exception {
+		log.info("in service");
+		return ContentsDao.selectContentsLength(params);
+	}
+	
+	@Override
 	public List<Map<String,Object>> selectContentsList() throws Exception {
 		return ContentsDao.selectContentsList();
 	}
 	@Override
-	public List<Map<String,Object>> selectContentsList(Map<String,Object> params) throws Exception {
+	public List<Map<String,Object>> selectContentsList(Map<String,Integer> params) throws Exception {
 		return ContentsDao.selectContentsList(params);
 	}
 	@Override
@@ -43,5 +49,6 @@ public class ContentsServiceImpl implements ContentsService{
 	public int updateContents(Map<String, Object> params) throws Exception {
 		return ContentsDao.updateContents(params);
 	}
+	
 
 }

@@ -32,6 +32,12 @@ CREATE TABLE CONTENTS
 		  FROM  CONTENTS
 		 WHERE  CONTENTS_IDX = #{CONTENTS_IDX}
 	</select>
+	<!-- count -->
+	<select id="selectContentsLength" parameterType="hashmap"
+		resultType="hashmap">        
+		SELECT 	COUNT(*) AS COUNT
+		  FROM  CONTENTS
+	</select>
 	<select id="selectContentsList"	resultType="hashmap">        
 		SELECT 	USER_ID,
 				LOAD_DATE,
@@ -42,6 +48,7 @@ CREATE TABLE CONTENTS
 				CONTENTS_IDX,
 				CONTENT_MD
 		  FROM  CONTENTS
+		 ORDER BY LOAD_DATE DESC
 	</select>
 	<select id="selectContentsList2" parameterType="hashmap"
 		resultType="hashmap">               
@@ -54,7 +61,8 @@ CREATE TABLE CONTENTS
 				CONTENTS_IDX,
 				CONTENT_MD
 		  FROM  CONTENTS
-		 WHERE	USER_ID = #{USER_ID}
+		 ORDER BY LOAD_DATE DESC
+		 LIMIT #{START} , #{COUNT}
 	</select>
 	
 	<!-- Insert  -->

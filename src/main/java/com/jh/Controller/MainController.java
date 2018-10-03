@@ -1,5 +1,6 @@
 package com.jh.Controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,10 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jh.Service.ContentsService;
+import com.jh.common.CommandMap;
 
 @Controller
 public class MainController {
@@ -26,10 +26,24 @@ public class MainController {
 	
 	
 	@RequestMapping("/main/index")
-	public String mainIndex(HttpServletRequest req) throws Exception {
-		List<Map<String,Object>> result =contentService.selectContentsList();
-		req.setAttribute("contents",result);
+	public String mainIndex(HttpServletRequest req,CommandMap params) throws Exception {
+		int page = 0;
+		try {
+			page =params.get("page") ==null? 0:Integer.parseInt((String) params.get("page"));
+		}catch(Exception e) {
+			page = 0;
+		}
+		Map<String,Integer> pageParam = new HashMap<>();
+		pageParam.put("START",page*3);
+		pageParam.put("COUNT",3);
+		List<Map<String,Object>> result =contentService.selectContentsList(pageParam);
+		Map<String,Object> tmp = new HashMap<>();
+		Map<String,Object> contentlen =contentService.selectContentsLength(tmp);
 		
+		
+		req.setAttribute("contentlen", contentlen.get("COUNT"));
+		req.setAttribute("contents",result);
+		req.setAttribute("page", page);
 		return "blog/index";
 	}
 
@@ -47,10 +61,11 @@ public class MainController {
 		if (key.equals("kjihoon0914")) {
 			log.info("connect master");
 			sess.setAttribute("master", "on");
-			List<Map<String,Object>> result =contentService.selectContentsList();
-			req.setAttribute("contents",result);
+			//List<Map<String,Object>> result =contentService.selectContentsList();
+			//req.setAttribute("contents",result);
 		}else {
 			sess.invalidate();
+			log.info("incorrec connection");
 			return "redirect:/main/index";
 		}
 		

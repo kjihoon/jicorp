@@ -43,7 +43,7 @@ public class ContentsController {
 	
 	
 	
-	@RequestMapping(value="/create/contents" ,produces = "text/html; charset=utf8",method=RequestMethod.GET) // POST
+	@RequestMapping(value="/create/contents" ,produces = "text/html; charset=utf8",method=RequestMethod.POST) // POST
 	public String createContents(CommandMap params,HttpServletRequest req,RedirectAttributes redirectAttributes){
 		try{
 			contentService.insertContents(params.getMap());
@@ -54,7 +54,7 @@ public class ContentsController {
 		}
 		return "redirect:/main/index";
 	}
-	@RequestMapping(value="/update/contents" ,produces = "text/html; charset=utf8",method=RequestMethod.GET) // POST
+	@RequestMapping(value="/update/contents" ,produces = "text/html; charset=utf8",method=RequestMethod.POST) // POST
 	public String updateContents(CommandMap params,HttpServletRequest req,RedirectAttributes redirectAttributes){
 		try{
 			contentService.updateContents(params.getMap());

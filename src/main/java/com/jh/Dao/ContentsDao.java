@@ -16,12 +16,17 @@ public class ContentsDao extends AbstractDao{
 		return(Map<String, Object>) selectOne("contents.selectContentsOne",params);
 	}
 	@SuppressWarnings("unchecked")
+	public Map<String,Object> selectContentsLength(Map<String,Object> params) throws Exception{
+		log.info("in dao");
+		return(Map<String, Object>) selectOne("contents.selectContentsLength",params);
+	}
+	@SuppressWarnings("unchecked")
 	public List<Map<String,Object>> selectContentsList() throws Exception{
 		return (List<Map<String,Object>>) selectList("contents.selectContentsList");
 	}
 	@SuppressWarnings("unchecked")
-	public List<Map<String,Object>> selectContentsList(Map<String,Object> params) throws Exception{
-		return (List<Map<String,Object>>) selectList("contents.selectContentsList",params);
+	public List<Map<String,Object>> selectContentsList(Map<String,Integer> params) throws Exception{
+		return (List<Map<String,Object>>) selectList("contents.selectContentsList2",params);
 	}
 	public int insertContents(Map<String,Object> params) throws Exception{
 		return (int) insert("contents.insertContents",params);

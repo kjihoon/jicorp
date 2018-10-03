@@ -14,13 +14,13 @@
               <a class="nav-link" href="${pageContext.request.contextPath}/main/index">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="#">About</a>
             </li>
-            <li class="nav-item">
+<!--             <li class="nav-item">
               <a class="nav-link" href="post.html">Sample Post</a>
-            </li>
+            </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="${pageContext.request.contextPath}/load/opinion">Contact</a>
             </li>
           </ul>
         </div>

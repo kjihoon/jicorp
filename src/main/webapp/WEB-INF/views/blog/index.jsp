@@ -47,7 +47,7 @@
 	 		<jsp:include page="main.jsp"></jsp:include>
 	 	</c:when>
 	 	<c:otherwise>
-	 		<jsp:include page="postheader.jsp"></jsp:include>
+	 		<jsp:include page="${center}header.jsp"></jsp:include>
 	 		<jsp:include page="${center}.jsp"></jsp:include>
 	 	</c:otherwise>
 	 </c:choose>
@@ -62,6 +62,8 @@
     <!-- Custom scripts for this template -->
     <script src="${pageContext.request.contextPath}/resources/js/clean-blog.min.js"></script>
 	<script>
+	
+	
 	$(document).ready(function(){
 		//error msg 처리
 		if ("${msg}"!=""){
@@ -77,6 +79,8 @@
 		$(".load_date").text(YYYY+"."+MM+"."+dd+"  "+hh+":"+mm);
 		
 	});
+	
+	 // master check
 	 var mastercheck= "${master}";
 	 if (mastercheck!=""){
 	    	$("[name=mastercheck]").show();
@@ -84,7 +88,11 @@
 	    	$("[name=mastercheck]").hide();
 	 }
 	
-	
+	 //의견 보내기
+	 $(".send_opinion").click(function(){
+ 		alert("kjihoon0914@naver.com");
+ 	})
+ 	
 	</script>
 </body>
 </html>	

@@ -28,7 +28,7 @@
 <div class="row">
 <div class="col-lg-8 col-md-10 mx-auto">
        <textarea class="my-tail-editor" id="content_md">${content.CONTENT_MD }</textarea>
-        <form id="edit_content" action="${pageContext.request.contextPath}/update/contents">
+        <form method="post" id="edit_content" action="${pageContext.request.contextPath}/update/contents">
 				<input type="hidden" name="TITLE">
 				<input type="hidden" name="TITLE_SUB">
 				<input type="hidden" name="CONTENT">
