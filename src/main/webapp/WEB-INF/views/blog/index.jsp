@@ -80,6 +80,7 @@
 			var hh   = date.substring(8,10);
 			var mm   = date.substring(10,12);
 			$(".load_date").eq(idx).text(YYYY+"."+MM+"."+dd+"  "+hh+":"+mm);
+			//
 		}
 		
 		
