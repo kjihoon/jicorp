@@ -69,14 +69,19 @@
 		if ("${msg}"!=""){
 			alert("${msg}");
 		}
+
 		//날짜 표기 처리
-		var date = $(".load_date").text();
-		var YYYY = date.substring(0,4);
-		var MM 	 = date.substring(4,6);
-		var dd   = date.substring(6,8);
-		var hh   = date.substring(8,10);
-		var mm   = date.substring(10,12);
-		$(".load_date").text(YYYY+"."+MM+"."+dd+"  "+hh+":"+mm);
+		var test =$(".load_date").toArray();
+		for (var idx = 0 ; idx<test.length;idx++){
+			var date = test[idx].innerText;
+			var YYYY = date.substring(0,4);
+			var MM 	 = date.substring(4,6);
+			var dd   = date.substring(6,8);
+			var hh   = date.substring(8,10);
+			var mm   = date.substring(10,12);
+			$(".load_date").eq(idx).text(YYYY+"."+MM+"."+dd+"  "+hh+":"+mm);
+		}
+		
 		
 	});
 	
