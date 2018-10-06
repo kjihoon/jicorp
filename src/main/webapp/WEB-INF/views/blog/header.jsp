@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>JH's Blog</h1>
+              <h1>JH's Tech Blog</h1>
               <span class="subheading" style="font-family: 'Nanum Pen Script', cursive;">Where there’s a will, there’s a way.</span>
             </div>
           </div>

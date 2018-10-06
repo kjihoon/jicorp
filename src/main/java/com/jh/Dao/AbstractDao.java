@@ -21,41 +21,82 @@ public class AbstractDao {
     }
      
     public Object insert(String queryId, Object params){
-        printQueryId(queryId);
+    	printQueryId(queryId);
+        Object result = null;
+        try {
+        	 result =  sqlSession.insert(queryId, params);
+        }catch(Exception e){
+        	log.error(e.getMessage());
+        }
+        return result;   
        
-        return sqlSession.insert(queryId, params);
     }
      
     public Object update(String queryId, Object params){
-        printQueryId(queryId);
-        return sqlSession.update(queryId, params);
+    	printQueryId(queryId);
+        Object result = null;
+        try {
+        	 result = sqlSession.update(queryId, params);
+        }catch(Exception e){
+        	log.error(e.getMessage());
+        }
+        return result;   
     }
      
     public Object delete(String queryId, Object params){
-        printQueryId(queryId);
-       
-        return sqlSession.delete(queryId, params);
+    	printQueryId(queryId);
+        Object result = null;
+        try {
+        	 result = sqlSession.delete(queryId, params);
+        }catch(Exception e){
+        	log.error(e.getMessage());
+        }
+        return result;       
     }
      
     public Object selectOne(String queryId){
-        printQueryId(queryId);
-        return sqlSession.selectOne(queryId);
+    	printQueryId(queryId);
+        Object result = null;
+        try {
+        	 result = sqlSession.selectOne(queryId);
+        }catch(Exception e){
+        	log.error(e.getMessage());
+        }
+        return result;
     }
      
     public Object selectOne(String queryId, Object params){
-        printQueryId(queryId);
-        return sqlSession.selectOne(queryId, params);
+    	printQueryId(queryId);
+        Object result = null;
+        try {
+        	 result = sqlSession.selectOne(queryId, params);
+        }catch(Exception e){
+        	log.error(e.getMessage());
+        }
+        return result;
     }
      
     @SuppressWarnings("rawtypes")
     public List selectList(String queryId){
-        printQueryId(queryId);
-        return sqlSession.selectList(queryId);
+    	 printQueryId(queryId);
+         List result = null;
+         try {
+         	 result = sqlSession.selectList(queryId);
+         }catch(Exception e){
+         	log.error(e.getMessage());
+         }
+         return result;
     }
      
     @SuppressWarnings("rawtypes")
     public List selectList(String queryId, Object params){
         printQueryId(queryId);
-        return sqlSession.selectList(queryId,params);
+        List result = null;
+        try {
+        	 result = sqlSession.selectList(queryId,params);
+        }catch(Exception e){
+        	log.error(e.getMessage());
+        }
+        return result;
     }
 }

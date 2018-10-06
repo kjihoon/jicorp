@@ -2,7 +2,6 @@ package com.jh.common;
 
 import java.util.Enumeration;
 
-import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 

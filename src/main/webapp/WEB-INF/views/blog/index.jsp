@@ -44,6 +44,7 @@
 	 <c:choose>
 	 	<c:when test="${center==null }">
 	 		<jsp:include page="header.jsp"></jsp:include>
+	 		<c:choose><c:when test="${msg!=null }"><jsp:include page="alert.jsp"></jsp:include></c:when></c:choose>
 	 		<jsp:include page="main.jsp"></jsp:include>
 	 	</c:when>
 	 	<c:otherwise>
@@ -65,11 +66,6 @@
 	
 	
 	$(document).ready(function(){
-		//error msg 처리
-		if ("${msg}"!=""){
-			alert("${msg}");
-		}
-
 		//날짜 표기 처리
 		var test =$(".load_date").toArray();
 		for (var idx = 0 ; idx<test.length;idx++){
@@ -79,11 +75,8 @@
 			var dd   = date.substring(6,8);
 			var hh   = date.substring(8,10);
 			var mm   = date.substring(10,12);
-			$(".load_date").eq(idx).text(YYYY+"."+MM+"."+dd+"  "+hh+":"+mm);
-			//
+			$(".load_date").eq(idx).text(YYYY+"."+MM+"."+dd+"  "+hh+":"+mm);	
 		}
-		
-		
 	});
 	
 	 // master check
