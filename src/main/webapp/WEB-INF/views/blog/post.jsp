@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
+
     <!-- Post Content -->
     <jsp:include page="arrow.jsp"></jsp:include>
     
@@ -7,8 +10,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-          
-          <div class=".tail-writer-object tail-writer-preview">
+          <div class=".tail-writer-object tail-writer-preview" name="md">
 			${content.CONTENT }
 		  </div>
             <!-- <p>Placeholder text by

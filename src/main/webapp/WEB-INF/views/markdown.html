@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Marked in the browser</title>
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<article class="markdown-body">
+  <div id="content"></div>
+
+</article>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+   
+    
+    var text = `
+    # 7. Action View Form Helper(0626, 0627 추가)
+
+    ### Form Helper [API](http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormTagHelper.html)
+
+    ###### (Form_tag, Form_for)
+	+"```java"+
+	"	int a = 1;"+
+    "```"+
+	
+   
+    '`;
+    
+     document.getElementById('content').innerHTML =
+      marked(text);
+  </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 package com.jh.common;
 
-public class Msg {
+public interface Msg {
 	public static final String SELECT_MSG_ERROR = " 요청에 실패하였습니다.";
 	public static final String UPDATE_MSG_ERROR = " 수정에 실패하였습니다.";
 	public static final String DELETE_MSG_ERROR = " 삭제에 실패하였습니다.";

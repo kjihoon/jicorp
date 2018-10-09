@@ -19,7 +19,7 @@ import com.jh.common.CommandMap;
 import com.jh.common.Msg;
 
 @Controller
-public class MainController extends Msg{
+public class MainController implements Msg{
 	@Autowired
 	ContentsService contentService;
 	

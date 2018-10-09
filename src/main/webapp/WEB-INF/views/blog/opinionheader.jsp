@@ -6,7 +6,7 @@
 
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('${pageContext.request.contextPath}/resources/img/contact-bg.jpg')">
+    <header class="masthead" style="background-image: url('https://i2.wp.com/www.theyummytruth.com/wp-content/uploads/2011/12/contact-me.jpg?resize=670%2C334&ssl=1')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">

@@ -4,13 +4,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-
+<style>
+#mainList img{
+	padding: 20px;
+	height: 200px;
+}
+#mainList:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+</style>
     <!-- Main Content -->
     <div class="container">
+    
+	
       <div class="row">
+        
+		
         <div class="col-lg-8 col-md-10 mx-auto">
+        
+		
           <!-- contents view using loof -->
-          <c:forEach items="${contents }" var="content">           
+          <c:forEach items="${contents }" var="content">
+          <div class="row" id="mainList">
+         	 <img src="http://www.200oksolutions.com/wp-content/uploads/2017/03/java-img.png" class="col-4">
+          <div class="col-8">           
           <div class="post-preview">
             <a href="${pageContext.request.contextPath}/select/content?CONTENTS_IDX=${content.CONTENTS_IDX}">
               <h2 class="post-title">
@@ -24,9 +41,10 @@
               <a href="#">${content.USER_ID }</a>
               <!-- on September 24, 2018 --><span class="load_date">${content.LOAD_DATE }</span></p>
           </div>
+          </div>
+          </div>
           <hr>
           </c:forEach>
-          
 
 			<nav aria-label="Page navigation example">
 			  <ul class="pagination justify-content-center">

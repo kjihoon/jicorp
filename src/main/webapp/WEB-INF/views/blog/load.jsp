@@ -3,7 +3,12 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<style>
+.tail-writer-object{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
+</style>
   <!-- Post Content -->
     <article>
       <div class="container">
@@ -82,7 +87,7 @@
 				var html_prview= $("body > div > div > div > div > div.tail-writer-preview").html();
 				$("#priview_md").html(html_prview);
 				TITLE = $("#priview_md h1").first().text();
-				TITLE_SUB = $("#priview_md h2").first().text();
+				TITLE_SUB = $("#priview_md h3").first().text();
 				USER_ID ="jihoon";
 				CONTENT = html_prview;
 				CONTENT_MD=$("#content_md").val();

@@ -30,9 +30,31 @@
     <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/resources/css/clean-blog.min.css" rel="stylesheet">
 	<script src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
-    
-    
-    <title>JH's Tech Blog</title>
+
+
+<!-- inner markdown res -->    
+<style>
+@import url(//https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+[name=md]{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+[name=md] pre{
+	border-radius: 5px;
+}
+[name=md] code{
+font-family: Courier, 'New Courier', monospace;
+	font-size: 120%;
+	line-height: 20px;
+	font-weight: 500;
+}    
+</style>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/highlight/styles/default.css">
+<script src="${pageContext.request.contextPath}/resources/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>    
+<!-- /inner markdown res -->   
+
+<title>JIHOONY</title>
 </head>
 <body>
 

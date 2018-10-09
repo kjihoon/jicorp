@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
          
-			<div id="priview_md" class=".tail-writer-object tail-writer-preview">
+			<div id="priview_md" class=".tail-writer-object tail-writer-preview" name="md">
 			
 			
 			</div>
@@ -82,7 +82,7 @@
 				var html_prview= $("body > div > div > div > div > div.tail-writer-preview").html();
 				$("#priview_md").html(html_prview);
 				TITLE = $("#priview_md h1").first().text();
-				TITLE_SUB = $("#priview_md h2").first().text();
+				TITLE_SUB = $("#priview_md h3").first().text();
 				CONTENT = html_prview;
 				CONTENT_MD=$("#content_md").val();
 				CONTENTS_IDX="${content.CONTENTS_IDX}";
