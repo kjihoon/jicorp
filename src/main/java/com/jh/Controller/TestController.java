@@ -38,7 +38,7 @@ public class TestController {
 	        try {
 	            byte[] bytes = img.getBytes();
 	            log.debug(System.getProperty("catalina.base"));
-	            stream= new BufferedOutputStream(new FileOutputStream(new File(System.getProperty("catalina.base")+"/"+originalFilename) ));
+	            stream= new BufferedOutputStream(new FileOutputStream(new File(System.getProperty("catalina.base")+"/webapps/ROOT/"+originalFilename) ));
 	            stream.write(bytes);
 	        } catch (Exception e) {
 	        	log.error(e.getMessage());
