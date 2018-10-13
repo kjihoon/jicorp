@@ -30,12 +30,12 @@
           <div class="col-7">           
           <div class="post-preview">
             <a href="${pageContext.request.contextPath}/select/content?CONTENTS_IDX=${content.CONTENTS_IDX}">
-              <h2 class="post-title">
+              <h3 class="post-title">
                 ${content.TITLE }
-              </h2>
-              <h3 class="post-subtitle" style="font-family: 'Nanum Pen Script', cursive;">
-				${content.TITLE_SUB }
               </h3>
+              <h4 class="post-subtitle" style="font-family: 'Nanum Pen Script', cursive;">
+				${content.TITLE_SUB }
+              </h4>
             </a>
             <p class="post-meta">Posted by
               <a href="#">${content.USER_ID }</a>
