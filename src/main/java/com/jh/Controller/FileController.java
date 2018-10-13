@@ -32,12 +32,10 @@ public class FileController {
 		Map<String,Object> picture = new HashMap<>();
 		
 		
-		String path = req.getSession().getServletContext().getRealPath("/resources/img");
 		boolean flag = true;
 		String originalFilename = "";
 	    if (!img.isEmpty()) {
 	    	originalFilename = img.getOriginalFilename(); // fileName.jpg
-	        path =  path+"\\"+originalFilename;
 	        BufferedOutputStream stream = null;
 	        try {
 	            byte[] bytes = img.getBytes();
@@ -45,7 +43,7 @@ public class FileController {
 	            if ( "/var/lib/tomcat8".equals(System.getProperty("catalina.base"))) {
 	            	 //운영 서버
 	            	log.debug("운영 서버 자원 업로드");
-	            	File file = new File(System.getProperty("catalina.base")+"/webapps/ROOT/res/img/"+originalFilename);
+	            	File file = new File(System.getProperty("catalina.base")+"/webapps/ROOT/"+originalFilename);
 	            	if (file.isFile()) {return "이미 존재하는 파일(동일한 이름 포함)";}
 	            	stream= new BufferedOutputStream(new FileOutputStream(file));
 	            }else {
