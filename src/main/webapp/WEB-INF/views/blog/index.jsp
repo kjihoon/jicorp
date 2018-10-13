@@ -43,10 +43,16 @@
 	border-radius: 5px;
 }
 [name=md] code{
-font-family: Courier, 'New Courier', monospace;
+	font-family: Courier, 'New Courier', monospace;
 	font-size: 120%;
 	line-height: 20px;
 	font-weight: 500;
+}
+[name=md] p{
+	font-size: 80%;
+}  
+[name=md] p code{
+	font-size: 90%;
 }    
 </style>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/highlight/styles/default.css">
@@ -71,6 +77,7 @@ font-family: Courier, 'New Courier', monospace;
 	 	</c:when>
 	 	<c:otherwise>
 	 		<jsp:include page="${center}header.jsp"></jsp:include>
+	 		<c:choose><c:when test="${msg!=null }"><jsp:include page="alert.jsp"></jsp:include></c:when></c:choose>
 	 		<jsp:include page="${center}.jsp"></jsp:include>
 	 	</c:otherwise>
 	 </c:choose>

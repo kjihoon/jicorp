@@ -33,15 +33,17 @@
 <div class="row">
 <div class="col-lg-8 col-md-10 mx-auto">
        <textarea class="my-tail-editor" id="content_md"></textarea>
-        <form  method="post" id="load_content" action="${pageContext.request.contextPath}/create/contents" enctype="multipart/form-data">
+        <form  method="post" id="load_content" action="${pageContext.request.contextPath}/create/contents" >
 				<input type="hidden" name="TITLE">
 				<input type="hidden" name="TITLE_SUB">
 				<input type="hidden" name="USER_ID">
 				<input type="hidden" name="CONTENT">
 				<input type="hidden" name="CONTENT_MD">
-				<!-- <input type="submit" value="작성"> -->
-				<input type="file" name="img">
+				<input type="hidden" name="THUMBNAIL" value="default">
 		</form>
+		<jsp:include page="imgload.jsp"></jsp:include>		 
+
+		
 		
         <button class="btn btn-dark" id="priview_md_bt">미리보기</button>
         <button class="btn btn-dark" id="load_content_bt">작성</button>
@@ -90,8 +92,6 @@
 				TITLE = $("#priview_md h1").first().text();
 				TITLE_SUB = $("#priview_md h3").first().text();
 				
-				//PICTURE_URL = $("#priview_md img").first().attr("src");
-				//PICTURE_NAME= $("#priview_md img")
 				
 				USER_ID ="jihoon";
 				CONTENT = html_prview;

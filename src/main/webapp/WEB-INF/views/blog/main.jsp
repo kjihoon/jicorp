@@ -26,7 +26,7 @@
           <!-- contents view using loof -->
           <c:forEach items="${contents }" var="content">
           <div class="row" id="mainList">
-         	 <img src="${pageContext.request.contextPath}/resources/${content.PICTURE_URL}" class="col-5">
+         	 <img src="${content.THUMBNAIL}" class="col-5">
           <div class="col-7">           
           <div class="post-preview">
             <a href="${pageContext.request.contextPath}/select/content?CONTENTS_IDX=${content.CONTENTS_IDX}">

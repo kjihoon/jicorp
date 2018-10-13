@@ -34,8 +34,9 @@
 				<input type="hidden" name="CONTENT">
 				<input type="hidden" name="CONTENT_MD">
 				<input type="hidden" name="CONTENTS_IDX">
+				<input type="hidden" name="THUMBNAIL">
 		</form>
-		
+		<jsp:include page="imgload.jsp"></jsp:include>		 
         <button class="btn btn-dark" id="priview_md_bt">미리보기</button>
         <button class="btn btn-dark" id="edit_content_bt">수정</button>
         <button class="btn btn-dark" id="delete_content_bt">삭제</button>
@@ -86,12 +87,13 @@
 				CONTENT = html_prview;
 				CONTENT_MD=$("#content_md").val();
 				CONTENTS_IDX="${content.CONTENTS_IDX}";
-				
+				THUMBNAIL = $("#TMP_THUMBSNAIL span").text();
 				$("#edit_content input[name=TITLE]").val(TITLE);
 				$("#edit_content input[name=TITLE_SUB]").val(TITLE_SUB);
 				$("#edit_content input[name=CONTENT]").val(CONTENT);
 				$("#edit_content input[name=CONTENT_MD]").val(CONTENT_MD);
 				$("#edit_content input[name=CONTENTS_IDX]").val(CONTENTS_IDX);	
+				$("#edit_content input[name=THUMBNAIL]").val(THUMBNAIL);	
 				$("#edit_content_bt").show();
 			});
 			$("#edit_content_bt").click(function(){

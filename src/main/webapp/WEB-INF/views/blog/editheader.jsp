@@ -4,7 +4,7 @@
 
 
 	<!-- Page Header -->
-    <header class="masthead" style="background-image: url('${pageContext.request.contextPath}/resources/${thumbNail }')">
+    <header class="masthead"  style="background-image: url('${content.THUMBNAIL }')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
