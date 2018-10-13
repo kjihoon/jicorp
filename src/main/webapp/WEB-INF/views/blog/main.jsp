@@ -6,7 +6,7 @@
 
 <style>
 #mainList img{
-	padding: 20px;
+	padding: 20px 20px 20px 20px;
 	height: 200px;
 }
 #mainList:hover {
@@ -26,8 +26,8 @@
           <!-- contents view using loof -->
           <c:forEach items="${contents }" var="content">
           <div class="row" id="mainList">
-         	 <img src="http://www.200oksolutions.com/wp-content/uploads/2017/03/java-img.png" class="col-4">
-          <div class="col-8">           
+         	 <img src="${pageContext.request.contextPath}/resources/${content.PICTURE_URL}" class="col-5">
+          <div class="col-7">           
           <div class="post-preview">
             <a href="${pageContext.request.contextPath}/select/content?CONTENTS_IDX=${content.CONTENTS_IDX}">
               <h2 class="post-title">

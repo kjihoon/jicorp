@@ -12,9 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jh.Service.ContentsService;
+import com.jh.Service.PicturesService;
 import com.jh.common.CommandMap;
 import com.jh.common.Msg;
 
@@ -23,6 +25,8 @@ public class MainController implements Msg{
 	@Autowired
 	ContentsService contentService;
 	
+	@Autowired
+	PicturesService pictureService;
 	
 	Logger log = Logger.getLogger(this.getClass());
 	
@@ -36,19 +40,34 @@ public class MainController implements Msg{
 		try {
 			page = params.get("page") ==null? 0:Integer.parseInt((String) params.get("page"));
 		}catch(Exception e) {
+			msg = "Incorrect Request";
 			log.error(e.getMessage());
 		}
-		
+		// Select Contents List
 		Map<String,Integer> pageParam = new HashMap<>();
 		pageParam.put("START",page*COUNT);
 		pageParam.put("COUNT",COUNT);
-		List<Map<String,Object>> result =contentService.selectContentsList(pageParam);
+		List<Map<String,Object>> contentOne =contentService.selectContentsList(pageParam);
 		
-		Map<String,Object> tmp = new HashMap<>();
-		Map<String,Object> contentlen =contentService.selectContentsLength(tmp);
-
+		// Select Contents Length
+		Map<String,Object> contentlen =contentService.selectContentsLength(new HashMap<String,Object>());
+		
+		
+		// Select Pictures One
+		Map<String,Object> tmp_pictureOne = null;
+		Map<String,Object> tmp = null;
+		for(int i = 0 ; i<contentOne.size();i++) {
+			int tmp_CONTENTS_IDX = (int) contentOne.get(i).get("CONTENTS_IDX");
+			tmp = new HashMap<String,Object>();
+			tmp.put("CONTENTS_IDX", tmp_CONTENTS_IDX);
+			tmp_pictureOne = pictureService.selectPicturesOne(tmp);
+			String pictureUrl =  tmp_pictureOne==null? "img/prog.jpg" : (String) tmp_pictureOne.get("PICTURE_URL");
+			contentOne.get(i).put("PICTURE_URL", pictureUrl);
+		}
+		
+		
 		req.setAttribute("contentlen", contentlen.get("COUNT"));
-		req.setAttribute("contents",result);
+		req.setAttribute("contents",contentOne);
 		req.setAttribute("page", page);
 		req.setAttribute("msg", msg);
 		return "blog/index";
@@ -77,5 +96,20 @@ public class MainController implements Msg{
 		}
 		
 		return "blog/index";
+	}
+	
+	
+	
+	//test
+	@RequestMapping("/pic")
+	@ResponseBody
+	public String pic() {
+		Map<String,Object> params = new HashMap<>();
+		params.put("CONTENTS_IDX", "1");
+		params.put("PICTURE_NAME", "HAHA");
+		params.put("PICTURE_URL", "HAHA_URL");
+		
+		pictureService.insertPictures(params);
+		return "success";
 	}
 }

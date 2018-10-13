@@ -13,12 +13,15 @@ public class AbstractDao {
      
     @Autowired
 	SqlSessionTemplate sqlSession;
-     
+    
+    
+    
     protected void printQueryId(String queryId) {
         if(log.isDebugEnabled()){
             log.debug("QueryId  \t\t:  " + queryId);
         }
     }
+
      
     public Object insert(String queryId, Object params){
     	printQueryId(queryId);

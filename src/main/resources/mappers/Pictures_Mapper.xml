@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+CREATE TABLE PICTURES
+(
+    `PICTURES_IDX`  INT              NOT NULL   	 AUTO_INCREMENT COMMENT 'PICTURES_IDX', 
+	`CONTENTS_IDX`  INT              NOT NULL   	 COMMENT 'CONTENTS_IDX', 
+    `PICTURE_NAME`		VARCHAR(200) NOT NULL		 COMMENT 'PICTURE_NAME',
+    `PICTURE_URL`       MEDIUMTEXT	 NOT NULL        COMMENT 'PICTURE_URL',
+    PRIMARY KEY (PICTURES_IDX),
+    FOREIGN KEY (CONTENTS_IDX) REFERENCES `CONTENTS` (CONTENTS_IDX)
+);
+-->
+<mapper namespace="pictures">
+ 	<!-- Select -->
+	<select id="selectPicturesOne" parameterType="hashmap"
+		resultType="hashmap">        
+		SELECT 	PICTURES_IDX,
+				CONTENTS_IDX,
+				PICTURE_NAME,
+				PICTURE_URL
+		  FROM PICTURES
+		 WHERE CONTENTS_IDX = #{CONTENTS_IDX}
+		 LIMIT 1 
+	</select>
+
+	<select id="selectPicturesList" parameterType="hashmap"	
+		resultType="hashmap">        
+		SELECT 	PICTURES_IDX,
+				CONTENTS_IDX,
+				PICTURE_NAME,
+				PICTURE_URL
+		  FROM PICTURES
+		 WHERE CONTENTS_IDX = #{CONTENTS_IDX}
+	</select>
+
+	<!-- Insert  -->
+    <insert id="insertPictures" parameterType="hashmap">
+		INSERT INTO PICTURES (
+				CONTENTS_IDX,
+				PICTURE_NAME,
+				PICTURE_URL
+				)
+		VALUES (
+				#{CONTENTS_IDX},
+				#{PICTURE_NAME},
+				#{PICTURE_URL}
+				)
+			
+    </insert>
+    
+    <!-- Delete  -->
+    <delete id="deletePictures" parameterType="hashmap">
+    	DELETE FROM PICUTRES
+    	 WHERE #{CONTENTS_IDX}
+    </delete>
+    
+    <!-- Update  -->
+    <update id="updatePictures" parameterType="hashmap">
+
+    </update>
+</mapper>

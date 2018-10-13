@@ -33,13 +33,14 @@
 <div class="row">
 <div class="col-lg-8 col-md-10 mx-auto">
        <textarea class="my-tail-editor" id="content_md"></textarea>
-        <form  method="post" id="load_content" action="${pageContext.request.contextPath}/create/contents">
+        <form  method="post" id="load_content" action="${pageContext.request.contextPath}/create/contents" enctype="multipart/form-data">
 				<input type="hidden" name="TITLE">
 				<input type="hidden" name="TITLE_SUB">
 				<input type="hidden" name="USER_ID">
 				<input type="hidden" name="CONTENT">
 				<input type="hidden" name="CONTENT_MD">
 				<!-- <input type="submit" value="작성"> -->
+				<input type="file" name="img">
 		</form>
 		
         <button class="btn btn-dark" id="priview_md_bt">미리보기</button>
@@ -88,6 +89,10 @@
 				$("#priview_md").html(html_prview);
 				TITLE = $("#priview_md h1").first().text();
 				TITLE_SUB = $("#priview_md h3").first().text();
+				
+				//PICTURE_URL = $("#priview_md img").first().attr("src");
+				//PICTURE_NAME= $("#priview_md img")
+				
 				USER_ID ="jihoon";
 				CONTENT = html_prview;
 				CONTENT_MD=$("#content_md").val();
