@@ -34,10 +34,25 @@ a[name=dirBtn]{
 </style>
 </head>
 <body>
+
+<div class="container">
 <h1>JH FILE SERVER</h1>
+<div>
+<a href="${pageContext.request.contextPath}"><strong>돌아가기</strong></a>
+<a href="${pageContext.request.contextPath}/manager/res"><strong>새로고침</strong></a>
+</div>
+
+
+<div class="row">
+ <div class="col-lg-8 col-md-10 mx-auto">
 <ul class="dir" name="/res">
 	<li><a href="#" name="dirBtn" onclick='test(this);'>/res</a></li>
 </ul>
+</div>
+</div>
+
+</div>
+
 
 <form  method="post" enctype="multipart/form-data" id="fileform">
 
