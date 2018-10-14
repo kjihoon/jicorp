@@ -108,6 +108,13 @@
 				if (TITLE==""||TITLE_SUB==""||USER_ID==""||CONTENT==""||CONTENT==""){
 					alert("표기법을 지켜주세요")
 				}else{
+					if($("#TMP_THUMBSNAIL span").text()=='default'){
+						THUMBNAIL = $("#priview_md img").first().attr("src");
+						if (THUMBNAIL!=""&&THUMBNAIL!=null){
+							$("#load_content input[name=THUMBNAIL]").val(THUMBNAIL);
+						}
+					}
+					
 					$("#load_content").submit();
 				}
 				

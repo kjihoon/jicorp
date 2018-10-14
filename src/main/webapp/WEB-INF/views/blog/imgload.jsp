@@ -8,15 +8,15 @@
 		<input type="file" name="img" id="input_img">		
 	</form>
 	<button id="upload_img">IMG 비동기 업로드</button>
-	<div id="TMP_THUMBSNAIL">대표이미지:  <span>DEFAULT</span></div>
+	<div id="TMP_THUMBSNAIL">대표이미지:  <span>default</span></div>
 	<div id="statusMsg"></div>
 	<script>
 	
 	$(document).ready(function(){
 		var thumbnail = "${content.THUMBNAIL}";
 		
-		if (thumbnail!=null){
-			$("#TMP_THUMBSNAIL span").text(thumbnail.split("/")[thumbnail.split("/").length-1]);
+		if (thumbnail!=null&&thumbnail!=""){
+			$("#TMP_THUMBSNAIL span").text("/res/img/"+thumbnail.split("/")[thumbnail.split("/").length-1]);
 		}
 	})
 	
@@ -38,12 +38,12 @@
 	
 	function select_thumbnail(fileName){
 		if ($("#edit_content").length>0){
-			$("#edit_content input[name=THUMBNAIL]").val(fileName);
+			$("#edit_content input[name=THUMBNAIL]").val("/res/img/"+fileName);
 		}else if($("#load_content").length>0){
-			$("#load_content input[name=THUMBNAIL]").val(fileName);
+			$("#load_content input[name=THUMBNAIL]").val("/res/img/"+fileName);
 		}
 		
-		$("#TMP_THUMBSNAIL span").text(fileName);
+		$("#TMP_THUMBSNAIL span").text("/res/img/"+fileName);
 		
 	}
 		

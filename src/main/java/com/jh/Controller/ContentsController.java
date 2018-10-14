@@ -59,7 +59,7 @@ public class ContentsController implements Msg{
 		if ("default".equals(TBUMBNAIL)||"".equals(TBUMBNAIL)) {
 			params.put("THUMBNAIL","/res/img/prog.jpg"); 
 		}else {
-			params.put("THUMBNAIL","/res/img/"+TBUMBNAIL); 
+			params.put("THUMBNAIL",TBUMBNAIL); 
 		}
 		
 		Object result_con = contentService.insertContents(params.getMap());
@@ -78,7 +78,7 @@ public class ContentsController implements Msg{
 		if ("default".equals(TBUMBNAIL)||"".equals(TBUMBNAIL)) {
 			params.put("THUMBNAIL","/res/img/prog.jpg"); 
 		}else {
-			params.put("THUMBNAIL","/res/img/"+TBUMBNAIL); 
+			params.put("THUMBNAIL",TBUMBNAIL); 
 		}
 		Object result =contentService.updateContents(params.getMap());
 		if (result == null) {
