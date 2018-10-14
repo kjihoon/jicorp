@@ -104,6 +104,19 @@ public class ContentsController implements Msg{
 		return "blog/index";
 	}
 	
+	@RequestMapping("/delete/contents")
+	public String deleteContents(CommandMap params,HttpServletRequest req,RedirectAttributes redirectAttributes){	
+		
+		
+		Object result =contentService.deleteContents(params.getMap());
+		if (result == null) {
+			redirectAttributes.addAttribute("msg","content"+DELETE_MSG_ERROR);
+		}
+		return "redirect:/main/index";
+	}
+	
+	
+	
 	@RequestMapping("/selectlist/contents")
 	@ResponseBody
 	public String selectContentsList() throws Exception {

@@ -22,7 +22,7 @@
 		
         <div class="col-lg-8 col-md-10 mx-auto">
         
-		
+		<span>총 ${contentlen}건의 글</span>
           <!-- contents view using loof -->
           <c:forEach items="${contents }" var="content">
           <div class="row" id="mainList">
@@ -55,13 +55,16 @@
 			    <li class="page-item" id="nextIdx">
 			      <a class="page-link" href="#">Next</a>
 			    </li>
+			   
 			  </ul>
+			  
 			</nav>
 
-
+			
           <!-- Pager -->
           <div class="clearfix">
             <a name="mastercheck" class="btn btn-primary float-right" href="${pageContext.request.contextPath}/load/contents">POST</a>
+            <a name="mastercheck" class="btn btn-primary float-right" href="${pageContext.request.contextPath}/manager/res">FILE SERVER</a>
           </div>
         </div>
       </div>

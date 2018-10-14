@@ -105,7 +105,9 @@
 				
 			});
 		
-		
+		$("#delete_content_bt").click(function(){
+			window.location.href="${pageContext.request.contextPath}/delete/contents?CONTENTS_IDX=${content.CONTENTS_IDX}";
+		})
 		
 		
 	</script>
