@@ -37,7 +37,14 @@
 @import url(//https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 [name=md]{
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	
+}
+p img{
 
+    max-width: 100%; /* 이미지의 최대사이즈 */
+    width /***/: auto; /* only IE8 */
+    height: auto;
+    vertical-align: bottom;
 }
 [name=md] pre{
 	border-radius: 5px;

@@ -27,4 +27,6 @@
             <a name="mastercheck" class="btn btn-primary float-right" href="${pageContext.request.contextPath}/edit/contents?CONTENTS_IDX=${content.CONTENTS_IDX }">EDIT</a>
       </div>
     </div>
-      
+      <script>
+      	$("div[name='md'] img").addClass("img-responsive center-block");
+      </script>
