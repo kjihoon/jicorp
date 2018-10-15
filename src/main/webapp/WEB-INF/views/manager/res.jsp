@@ -15,7 +15,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>JH FILE SERVER</title>
 <style>
-
+@media print {
+  .container {
+    width: auto;
+  }
+}
 a.disabled {
   /* Make the disabled links grayish*/
   color: gray;
@@ -32,16 +36,16 @@ a[name=dirBtn]{
 	background-color: red;
 }
 </style>
+
+
 </head>
 <body>
-
 <div class="container">
 <h1>JH FILE SERVER</h1>
 <div>
 <a href="${pageContext.request.contextPath}"><strong>돌아가기</strong></a>
 <a href="${pageContext.request.contextPath}/manager/res"><strong>새로고침</strong></a>
 </div>
-
 
 <div class="row">
  <div class="col-lg-8 col-md-10 mx-auto">
@@ -51,13 +55,14 @@ a[name=dirBtn]{
 </div>
 </div>
 
+
 </div>
 
 
 <form  method="post" enctype="multipart/form-data" id="fileform">
-
 <input name="uploadfile" type="file">
 <input type="hidden" name="path">
+</form>
 </body>
 <script>
 $("form").hide();
