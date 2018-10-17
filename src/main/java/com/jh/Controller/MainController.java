@@ -32,7 +32,7 @@ public class MainController implements Msg{
 	/*MAIN INDEX PAGE*/
 	@RequestMapping("/main/index")
 	public String mainIndex(HttpServletRequest req,CommandMap params) {
-		int COUNT = 3; //view count
+		final int COUNT = 5; //view count
 		int page = 0;  //default page
 		String msg = (String) params.get("msg");
 		

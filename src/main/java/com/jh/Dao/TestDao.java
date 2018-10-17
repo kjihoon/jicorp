@@ -14,20 +14,20 @@ public class TestDao extends AbstractDao{
 	Logger log = Logger.getLogger(this.getClass());
 
 	@SuppressWarnings("unchecked")
-	public Map<String,Object> selectTestOne(Map<String,Object> params) throws Exception{
+	public Map<String,Object> selectTestOne(Map<String,Object> params){
 		//log.debug("in dao");
 		return(Map<String, Object>) selectOne("test.selectTestOne",params);
 	}
 	@SuppressWarnings("unchecked")
-	public List<Map<String,Object>> selectTestList() throws Exception{
+	public List<Map<String,Object>> selectTestList() {
 		return (List<Map<String,Object>>) selectList("test.selectTestList");
 	}
 	@SuppressWarnings("unchecked")
-	public List<Map<String,Object>> selectTestList(Map<String,Object> params) throws Exception{
+	public List<Map<String,Object>> selectTestList(Map<String,Object> params) {
 		return (List<Map<String,Object>>) selectList("test.selectTestList",params);
 	}
 	//Object insert(String queryId, Object params)
-	public int insertTest(Map<String,Object> params) throws Exception{
+	public int insertTest(Map<String,Object> params) {
 		return (int) insert("test.insertTest",params);
 	}
 	public int deleteTest(Map<String, Object> params) {

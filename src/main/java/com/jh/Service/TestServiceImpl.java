@@ -17,28 +17,28 @@ public class TestServiceImpl implements TestService{
 	    private TestDao testDao;
 	    
 		@Override
-		public Map<String, Object> selectTestOne(Map<String,Object> params) throws Exception {
+		public Map<String, Object> selectTestOne(Map<String,Object> params)  {
 			//log.debug("in service");
 			return testDao.selectTestOne(params);
 		}
 		@Override
-		public List<Map<String,Object>> selectTestList() throws Exception {
+		public List<Map<String,Object>> selectTestList()  {
 			return testDao.selectTestList();
 		}
 		@Override
-		public List<Map<String,Object>> selectTestList(Map<String,Object> params) throws Exception {
+		public List<Map<String,Object>> selectTestList(Map<String,Object> params)  {
 			return testDao.selectTestList(params);
 		}
 		@Override
-		public int insertTest(Map<String,Object> params)  throws Exception {
+		public int insertTest(Map<String,Object> params)   {
 			return testDao.insertTest(params);
 		}
 		@Override
-		public int deleteTest(Map<String, Object> params) throws Exception {
+		public int deleteTest(Map<String, Object> params)  {
 			return testDao.deleteTest(params);
 		}
 		@Override
-		public int updateTest(Map<String, Object> params) throws Exception {
+		public int updateTest(Map<String, Object> params)  {
 			return testDao.updateTest(params);
 		}
 		
