@@ -39,7 +39,7 @@ public class FileController {
 	        BufferedOutputStream stream = null;
 	        try {
 	            byte[] bytes = img.getBytes();
-	           
+	            log.debug(System.getProperty("catalina.base"));
 	            if ( "/var/lib/tomcat8".equals(System.getProperty("catalina.base"))) {
 	            	 //운영 서버
 	            	log.debug("운영 서버 자원 업로드");

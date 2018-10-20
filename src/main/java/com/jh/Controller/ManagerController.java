@@ -46,7 +46,7 @@ public class ManagerController {
 		if (!master.equals("on")) {
 			return "incorrect req";
 		}
-		
+		log.debug("catalina.base PATH: \t"+System.getProperty("catalina.base"));
 		String reqPath = (String) req.getParameter("path");
 		log.debug("aftef: " + reqPath);
 		JSONObject jo = new JSONObject();
