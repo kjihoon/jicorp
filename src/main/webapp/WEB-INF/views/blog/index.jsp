@@ -8,9 +8,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta name="description" content="JH'S TECH BLOG">
+    <meta name="author" content="JIHOONY">
+	<meta name="google-site-verification" content="vVN1IXmbsec37PShgCwS3AXNjf0UH6aanFyCShkxolo" />
 	<!-- Tail Writer Res -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/tail/tail_css/tail.writer.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/tail/tail_css/tail.writer.github.css">
@@ -49,7 +49,7 @@ p img{
 [name=md] pre{
 	border-radius: 5px;
 }
-[name=md] code{
+[name=md] pre code{
 	font-family: Courier, 'New Courier', monospace;
 	font-size: 120%;
 	line-height: 20px;

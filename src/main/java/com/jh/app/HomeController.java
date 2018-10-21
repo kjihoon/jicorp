@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.jh.Service.TestService;
 
 
 
@@ -32,8 +31,6 @@ import com.jh.Service.TestService;
 @Controller
 public class HomeController {
 	
-	@Autowired
-	private TestService testService;
 	
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -46,34 +43,8 @@ public class HomeController {
 		return "redirect:/main/index";
 	}
 
-	@RequestMapping(value="/testdb", produces = "application/json; charset=utf8")
-	@ResponseBody
-	public String body(@RequestParam(value="hi",defaultValue="hi") String body) throws Exception {
-		logger.info(body);
-		JSONObject  jo = new JSONObject();
-		JSONArray jr = new JSONArray();
-		Map<String,Object> param_map = new HashMap<>();
-		/*param_map.put("id", "kjijihi0914");
-		param_map.put("name", "jihoon12");
-		List<Map<String, Object>> result = testService.selectTestList();
-		testService.insertTest(param_map);
-		
-		param_map.put("id", "kjihoon0914");
-		testService.deleteTest(param_map);
-		jo.put("body", result.toString());
-		*/
-		List<Map<String,Object>> result = new ArrayList<>();
-		result = testService.selectTestList();
-		jo.put("id", result.get(0).get("id"));
-		jo.put("name", result.get(0).get("name"));
-		JSONObject  jo2 = new JSONObject(result.get(0));
-		return jo2.toJSONString();
-	}
 	
-	@RequestMapping("/testform")
-	public String editor() {
-		return "testform";
-	}
+
 	
 	
 }
