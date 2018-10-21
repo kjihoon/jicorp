@@ -13,15 +13,15 @@
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 </style>
+
     <!-- Main Content -->
     <div class="container">
     
-	
+   <!--  <span class='badge badge-primary'> # WEB </span>
+    <span class='badge badge-primary'> # BLOCK CHAIN </span> -->
+    
       <div class="row">
-        
-		
         <div class="col-lg-8 col-md-10 mx-auto">
-        
 		<span>총 ${contentlen}건의 글</span>
           <!-- contents view using loof -->
           <c:forEach items="${contents }" var="content">
@@ -74,7 +74,7 @@
     <script>
     var page = parseInt("${page}");
     var count = "${contentlen}";
-    count = parseInt(count)/3;
+    count = parseInt(count)/ parseInt("${count}");
     count = count > parseInt(count) ? parseInt(count)+1 : parseInt(count); 
     for (var i = 0 ; i<count;i++){
     	 if (page==i){

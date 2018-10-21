@@ -37,10 +37,11 @@
 @import url(//https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 [name=md]{
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	
+}
+.badge{
+	font-family: 'Nanum Pen Script', cursive;
 }
 p img{
-
     max-width: 100%; /* 이미지의 최대사이즈 */
     width /***/: auto; /* only IE8 */
     height: auto;
@@ -49,18 +50,18 @@ p img{
 [name=md] pre{
 	border-radius: 5px;
 }
+[name=md] li,p{
+	font-size: 13px;
+}
 [name=md] pre code{
-	font-family: Courier, 'New Courier', monospace;
-	font-size: 120%;
+	font-size: 110%;
 	line-height: 20px;
 	font-weight: 500;
 }
-[name=md] p{
-	font-size: 80%;
-}  
-[name=md] p code{
+/* [name=md] p{
 	font-size: 90%;
-}    
+}   */
+   
 </style>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/highlight/styles/default.css">
 <script src="${pageContext.request.contextPath}/resources/highlight/highlight.pack.js"></script>

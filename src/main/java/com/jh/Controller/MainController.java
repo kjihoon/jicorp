@@ -51,6 +51,7 @@ public class MainController implements Msg{
 		// Select Contents Length
 		Map<String,Object> contentlen =contentService.selectContentsLength(new HashMap<String,Object>());
 
+		req.setAttribute("count", COUNT);
 		req.setAttribute("contentlen", contentlen.get("COUNT"));
 		req.setAttribute("contents",contentOne);
 		req.setAttribute("page", page);

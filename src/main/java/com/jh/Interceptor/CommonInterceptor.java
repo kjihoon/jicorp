@@ -25,12 +25,17 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
 	        if (logger.isDebugEnabled()) {
 	            logger.debug("======================================          START         ======================================");
 	            logger.debug(" Request URI \t:  " + request.getRequestURI());
-				Enumeration<String> list =request.getParameterNames();
-	            while (list.hasMoreElements()) {
-	            	String param = list.nextElement();
-	            	logger.info(" Params\t:  "+param+Arrays.toString(request.getParameterValues(param)));
-	            }
-	            if (request.getRequestURI().equals(request.getContextPath()+"/load/contents")) {
+	            
+	            	Enumeration<String> list =request.getParameterNames();
+		            while (list.hasMoreElements()) {
+		            	String param = list.nextElement();
+		            	logger.info(" Params\t:  "+param+Arrays.toString(request.getParameterValues(param)));
+		            }
+	            
+		            
+	            if (request.getRequestURI().equals(request.getContextPath()+"/load/contents")||
+	            		request.getRequestURI().equals(request.getContextPath()+"/edit/contents")
+	            		) {
 	            	
 	            	 HttpSession sess = request.getSession();
 	            	 String master = (String)sess.getAttribute("master");
@@ -39,7 +44,7 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
 	            		 logger.error("잘못된 이용!");
 	            		 response.sendRedirect(request.getContextPath()+"/main/index");     		 
 	            	 }	            	
-	            }            
+	            }             
 	           
 	        }
 	    
